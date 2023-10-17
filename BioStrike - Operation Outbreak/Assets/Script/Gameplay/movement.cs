@@ -11,11 +11,12 @@ public class movement : MonoBehaviour
     public float bulletSpeed = 10;
     public float jump;
     public bool isJumping;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -63,6 +64,7 @@ public class movement : MonoBehaviour
             if (other.gameObject.CompareTag("Ground"))
             {
                 isJumping = false;
+                animator.SetBool("isJumping", false);
             }
         }
 
@@ -71,6 +73,7 @@ public class movement : MonoBehaviour
             if (other.gameObject.CompareTag("Ground"))
             {
                 isJumping = true;
+                animator.SetBool("isJumping", true);
             }
         }
 }
