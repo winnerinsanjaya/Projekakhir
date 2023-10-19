@@ -28,14 +28,14 @@ public class movement : MonoBehaviour
         {
             transform.position += Vector3.up * playerMoveSpeed * Time.deltaTime;
             Debug.Log("Up");
-
+            AudioManager.instance.PlaySFX("Jump");
         }
         //Move Left Button
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += Vector3.left * playerMoveSpeed * Time.deltaTime;
             Debug.Log("Left");
-
+            
         }
         //Down Button
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
@@ -49,6 +49,7 @@ public class movement : MonoBehaviour
         {
             transform.position += Vector3.right * playerMoveSpeed * Time.deltaTime;
             Debug.Log("Right");
+            
         }
         //Shooting Button
         if(Input.GetKeyDown(KeyCode.Space))
@@ -56,6 +57,7 @@ public class movement : MonoBehaviour
             transform.Translate(Time.deltaTime*bulletSpeed*transform.right);
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = bulletSpawnPoint.right * bulletSpeed;
+            AudioManager.instance.PlaySFX("Gun");
         }
     }
 
