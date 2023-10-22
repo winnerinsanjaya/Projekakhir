@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
     {
 
     }
-
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -21,4 +21,5 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Intro");
     }
+    */
 }

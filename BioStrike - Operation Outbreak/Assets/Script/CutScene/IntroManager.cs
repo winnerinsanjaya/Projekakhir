@@ -16,9 +16,14 @@ public class IntroManager : MonoBehaviour
     {
         
     }
+    public void PlayGame()
+    {
+        AudioManager.instance.PlaySFX("UI");
+    }
 
     public void LoadGameplay()
     {
+        AudioManager.instance.PlaySFX("UI");
         SceneManager.LoadScene("Level 1");
     }
 }
