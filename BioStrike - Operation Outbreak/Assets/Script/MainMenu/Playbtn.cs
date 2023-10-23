@@ -12,7 +12,7 @@ public class Playbtn : MonoBehaviour
     public void PlayGame()
     {
         Time.timeScale = 1;
-        AudioManager.instance.PlaySFX("UI");
-        SceneManager.LoadScene("Intro");
+        AudioManagerLobby.instance.PlaySFX("UI");
+        SceneManager.LoadScene("CutSceneProlog");
     }
 }

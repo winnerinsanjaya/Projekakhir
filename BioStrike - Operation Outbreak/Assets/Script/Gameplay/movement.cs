@@ -28,7 +28,7 @@ public class movement : MonoBehaviour
         {
             transform.position += Vector3.up * playerMoveSpeed * Time.deltaTime;
             Debug.Log("Up");
-            AudioManager.instance.PlaySFX("Jump");
+            AudioManagerLevel1.instance.PlaySFX("Jump");
         }
         //Move Left Button
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
@@ -57,7 +57,7 @@ public class movement : MonoBehaviour
             transform.Translate(Time.deltaTime*bulletSpeed*transform.right);
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = bulletSpawnPoint.right * bulletSpeed;
-            AudioManager.instance.PlaySFX("Gun");
+            AudioManagerLevel1.instance.PlaySFX("Gun");
         }
     }
 

@@ -15,7 +15,7 @@ public class Pausebtn : MonoBehaviour
         Time.timeScale = 0;
         PlayScreen.SetActive(false);
         PauseScreen.SetActive(true);
-        AudioManager.instance.PlaySFX("Pause");
+        AudioManagerLevel1.instance.PlaySFX("Pause");
     }
 
     public void ResumeGame()
@@ -23,13 +23,13 @@ public class Pausebtn : MonoBehaviour
         Time.timeScale = 1;
         PlayScreen.SetActive(true);
         PauseScreen.SetActive(false);
-        AudioManager.instance.PlaySFX("Pause");
+        AudioManagerLevel1.instance.PlaySFX("Pause");
     }
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Lobby");
-        AudioManager.instance.PlaySFX("Pause");
+        AudioManagerLevel1.instance.PlaySFX("Pause");
     }
 }

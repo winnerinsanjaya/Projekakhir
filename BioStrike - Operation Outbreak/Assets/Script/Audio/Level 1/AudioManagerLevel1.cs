@@ -4,11 +4,11 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 
-public class AudioManager : MonoBehaviour
+public class AudioManagerLevel1 : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManagerLevel1 instance;
 
-    public Sound[] bgmSound, sfxSound;
+    public SoundLevel1[] bgmSound, sfxSound;
     public AudioSource bgmSource, sfxSource;
 
     private void Awake()
@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(string nama)
     {
-        Sound s = Array.Find(bgmSound, x => x.nama == nama);
+        SoundLevel1 s = Array.Find(bgmSound, x => x.nama == nama);
 
         if (s == null)
         {
@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(string nama)
     {
-        Sound s = Array.Find(sfxSound, x => x.nama == nama);
+        SoundLevel1 s = Array.Find(sfxSound, x => x.nama == nama);
 
         if (s == null)
         {
