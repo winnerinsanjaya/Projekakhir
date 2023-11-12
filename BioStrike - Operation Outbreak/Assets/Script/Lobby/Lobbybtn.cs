@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class Lobbybtn : MonoBehaviour
+{
+
+    [SerializeField]
+    private GameObject LobbyScreen;
+
+    [SerializeField]
+    private GameObject SoundSettingScreen;
+
+    [SerializeField]
+    private GameObject MoveSettingScreen;
+
+    public void PlayGame()
+    {
+        Time.timeScale = 1;
+        AudioManagerLobby.instance.PlaySFX("UI");
+        SceneManager.LoadScene("CutSceneProlog");
+    }
+
+    public void GoToCredit()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Credit");
+        AudioManagerLobby.instance.PlaySFX("UI");
+    }
+
+    public void lobby()
+    {
+        LobbyScreen.SetActive(true);
+        SoundSettingScreen.SetActive(false);
+        MoveSettingScreen.SetActive(false);
+        Time.timeScale = 1;
+        AudioManagerLobby.instance.PlaySFX("UI"); ;
+    }
+
+    public void SoundSetting()
+    {
+        LobbyScreen.SetActive(false);
+        SoundSettingScreen.SetActive(true);
+        MoveSettingScreen.SetActive(false);
+        Time.timeScale = 1;
+        AudioManagerLobby.instance.PlaySFX("UI"); ;
+    }
+
+    public void MoveSetting()
+    {
+        LobbyScreen.SetActive(false);
+        SoundSettingScreen.SetActive(false);
+        MoveSettingScreen.SetActive(true);
+        Time.timeScale = 1;
+        AudioManagerLobby.instance.PlaySFX("UI");
+    }
+
+    
+}

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 222069117}
   - component: {fileID: 222069118}
   m_Layer: 0
-  m_Name: Main Screen
+  m_Name: Lobby BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1832426087}
+  m_Father: {fileID: 1501165447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -501,50 +501,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430501740}
   m_CullTransparentMesh: 1
---- !u!1 &508952185
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 508952187}
-  - component: {fileID: 508952186}
-  m_Layer: 0
-  m_Name: MainMenuManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &508952186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508952185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b860f7377d856c741b6ee6009fe640bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &508952187
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508952185}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670393741
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +512,7 @@ GameObject:
   - component: {fileID: 670393743}
   - component: {fileID: 670393742}
   m_Layer: 0
-  m_Name: Iris logos
+  m_Name: IRIS logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 741723678}
   m_Layer: 0
-  m_Name: Logos Container
+  m_Name: Image Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,9 +835,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 508952186}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: LoadGameplay
+      - m_Target: {fileID: 1501165448}
+        m_TargetAssemblyTypeName: Lobbybtn, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1099,7 +1055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412758798}
   m_Layer: 5
-  m_Name: ButtonContainer
+  m_Name: Lobby Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1222,8 +1178,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 430501741}
   - {fileID: 1412758798}
   - {fileID: 1832426087}
+  - {fileID: 2003505101}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1243,7 +1201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c958c39b8723894dbec0513bbb60e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonContainer: {fileID: 1412758797}
+  LobbyScreen: {fileID: 1412758797}
+  SoundSettingScreen: {fileID: 1832426086}
+  MoveSettingScreen: {fileID: 2003505100}
 --- !u!1 &1575409207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,7 +1422,7 @@ GameObject:
   - component: {fileID: 1721260983}
   - component: {fileID: 1721260982}
   m_Layer: 0
-  m_Name: Unity logos
+  m_Name: Unity logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1618,9 +1578,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 508952186}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: LoadGameplay
+      - m_Target: {fileID: 1501165448}
+        m_TargetAssemblyTypeName: Lobbybtn, Assembly-CSharp
+        m_MethodName: GoToCredit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1678,12 +1638,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1832426087}
   m_Layer: 5
-  m_Name: Teks Container
+  m_Name: Sound Setting Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1832426087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1695,8 +1655,42 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 430501741}
+  m_Children: []
+  m_Father: {fileID: 1501165447}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -124, y: 45}
+  m_SizeDelta: {x: -248, y: -90}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2003505100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003505101}
+  m_Layer: 5
+  m_Name: Move Setting Screen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2003505101
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003505100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 1501165447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1742,8 +1736,6 @@ PlayableDirector:
     value: {fileID: 1721260981}
   - key: {fileID: 6257933007022060920, guid: 2d5f851fcf48de24682c254db1451e04, type: 2}
     value: {fileID: 430501740}
-  - key: {fileID: 6830088219331893497, guid: 2d5f851fcf48de24682c254db1451e04, type: 2}
-    value: {fileID: 1412758797}
   - key: {fileID: 1950244247699321728, guid: 2d5f851fcf48de24682c254db1451e04, type: 2}
     value: {fileID: 1575409207}
   - key: {fileID: -6194808191346012150, guid: 2d5f851fcf48de24682c254db1451e04, type: 2}
@@ -1949,7 +1941,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1159966802}
-  - {fileID: 508952187}
   - {fileID: 2089104999}
   - {fileID: 741723678}
   - {fileID: 1501165447}
