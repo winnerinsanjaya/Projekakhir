@@ -28,7 +28,7 @@ public class movement : MonoBehaviour
         {
             transform.position += Vector3.up * playerMoveSpeed * Time.deltaTime;
             Debug.Log("Up");
-            AudioManagerLevel1.instance.PlaySFX("Jump");
+            //AudioManagerLevel1.instance.PlaySFX("Jump");
         }
         //Move Left Button
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
