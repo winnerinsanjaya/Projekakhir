@@ -8,8 +8,9 @@ public class AudioManagerLobby : MonoBehaviour
 {
     public static AudioManagerLobby instance;
 
-    public SoundLobby[] sfxSound;
-    public AudioSource sfxSource;
+    public SoundLobby[] bgmSound, sfxSound;
+    public AudioSource bgmSource, sfxSource;
+
 
     private void Awake()
     {
@@ -36,5 +37,29 @@ public class AudioManagerLobby : MonoBehaviour
         {
             sfxSource.PlayOneShot(s.clip);
         }
+    }
+
+    public void SFXVolume(float volume)
+    {
+        sfxSource.volume = volume;
+    }
+
+    public void PlayBGM(string nama)
+    {
+        SoundLobby s = Array.Find(bgmSound, x => x.nama == nama);
+
+        if (s == null)
+        {
+            Debug.Log("Sfx 404");
+        }
+        else
+        {
+            bgmSource.PlayOneShot(s.clip);
+        }
+    }
+
+    public void BGMVolume(float volume)
+    {
+        bgmSource.volume = volume;
     }
 }

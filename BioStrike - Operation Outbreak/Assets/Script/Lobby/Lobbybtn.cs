@@ -18,6 +18,7 @@ public class Lobbybtn : MonoBehaviour
     public void PlayGame()
     {
         Time.timeScale = 1;
+        AudioManagerLobby.instance.bgmSource.Stop();
         AudioManagerLobby.instance.PlaySFX("UI");
         SceneManager.LoadScene("CutSceneProlog");
     }
@@ -25,6 +26,7 @@ public class Lobbybtn : MonoBehaviour
     public void GoToCredit()
     {
         Time.timeScale = 1;
+        AudioManagerLobby.instance.bgmSource.Stop();
         SceneManager.LoadScene("Credit");
         AudioManagerLobby.instance.PlaySFX("UI");
     }
@@ -35,7 +37,7 @@ public class Lobbybtn : MonoBehaviour
         SoundSettingScreen.SetActive(false);
         MoveSettingScreen.SetActive(false);
         Time.timeScale = 1;
-        AudioManagerLobby.instance.PlaySFX("UI"); ;
+        AudioManagerLobby.instance.PlaySFX("UI");
     }
 
     public void SoundSetting()
@@ -44,7 +46,8 @@ public class Lobbybtn : MonoBehaviour
         SoundSettingScreen.SetActive(true);
         MoveSettingScreen.SetActive(false);
         Time.timeScale = 0;
-        AudioManagerLobby.instance.PlaySFX("UI"); ;
+        AudioManagerLobby.instance.PlayBGM("Lobby");
+        AudioManagerLobby.instance.PlaySFX("UI");
     }
 
     public void MoveSetting()

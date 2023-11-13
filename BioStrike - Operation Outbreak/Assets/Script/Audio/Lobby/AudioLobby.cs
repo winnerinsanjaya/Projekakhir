@@ -11,4 +11,10 @@ public class AudioLobby : MonoBehaviour
 
     [SerializeField]
     private List<AudioClip> sfxClip;
+
+    [SerializeField]
+    private AudioSource bgmAudioSource;
+
+    [SerializeField]
+    private List<AudioClip> bgmClip;
 }
