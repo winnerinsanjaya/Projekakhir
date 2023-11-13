@@ -29,7 +29,7 @@ public class Lobbybtn : MonoBehaviour
         AudioManagerLobby.instance.PlaySFX("UI");
     }
 
-    public void lobby()
+    public void Backlobby()
     {
         LobbyScreen.SetActive(true);
         SoundSettingScreen.SetActive(false);
@@ -43,7 +43,7 @@ public class Lobbybtn : MonoBehaviour
         LobbyScreen.SetActive(false);
         SoundSettingScreen.SetActive(true);
         MoveSettingScreen.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         AudioManagerLobby.instance.PlaySFX("UI"); ;
     }
 
@@ -52,7 +52,7 @@ public class Lobbybtn : MonoBehaviour
         LobbyScreen.SetActive(false);
         SoundSettingScreen.SetActive(false);
         MoveSettingScreen.SetActive(true);
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         AudioManagerLobby.instance.PlaySFX("UI");
     }
 
