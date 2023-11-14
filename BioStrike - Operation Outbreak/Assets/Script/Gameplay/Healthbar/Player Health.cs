@@ -12,13 +12,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
-        healthBar = GetComponentInChildren<FloatingHealthBar>();
+        //healthBar = GetComponent<FloatingHealthBar>();
     }
     void Start()
     {
         currentHealth = maxHealth;
-        //healthBar.UpdateHealthBar(currentHealth, maxHealth);
-        //healthbar.SetMaXHealth(maxHealth);
+        healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        healthbar.SetMaXHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         
 
-        //healthbar.SetHealth(currentHealth);
+        healthbar.SetHealth(currentHealth);
     }
 
 }
