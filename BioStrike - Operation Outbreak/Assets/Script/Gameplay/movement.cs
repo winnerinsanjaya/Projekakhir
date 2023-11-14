@@ -13,9 +13,22 @@ public class movement : MonoBehaviour
     public bool isJumping;
     public Animator animator;
 
+
+
+    [SerializeField]
+    private int totalJump;
+
+    public int airCount;
+
+    private Rigidbody2D rb;
+
+    [SerializeField]
+    private float JumpPower;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -24,11 +37,13 @@ public class movement : MonoBehaviour
     {
         Move = Input.GetAxis("Horizontal");
         //Jump Button
-       if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+       if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && airCount < totalJump)
         {
-            transform.position += Vector3.up * playerMoveSpeed * Time.deltaTime;
+            Vector2 direction = new Vector2(0, 1);
+            rb.velocity = direction * JumpPower;
+            airCount += 1;
             Debug.Log("Up");
-            //AudioManagerLevel1.instance.PlaySFX("Jump");
+            AudioManagerLevel1.instance.PlaySFX("Jump");
         }
         //Move Left Button
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
@@ -63,19 +78,31 @@ public class movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Ground"))
-            {
-                isJumping = false;
-                animator.SetBool("isJumping", false);
-            }
+            
         }
 
     private void OnCollisionExit2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Ground"))
-            {
-                isJumping = true;
-                animator.SetBool("isJumping", true);
-            }
+            
         }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+
+            airCount = 0;
+            isJumping = false;
+            animator.SetBool("isJumping", false);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isJumping = true;
+            animator.SetBool("isJumping", true);
+        }
+    }
 }
