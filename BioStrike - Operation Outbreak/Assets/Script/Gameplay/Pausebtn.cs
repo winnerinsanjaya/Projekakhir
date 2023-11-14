@@ -31,5 +31,6 @@ public class Pausebtn : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Lobby");
         AudioManagerLevel1.instance.PlaySFX("Pause");
+        AudioManagerLevel1.instance.bgmSource.Stop();
     }
 }
