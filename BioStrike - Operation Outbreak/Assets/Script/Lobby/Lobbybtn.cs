@@ -15,6 +15,12 @@ public class Lobbybtn : MonoBehaviour
     [SerializeField]
     private GameObject MoveSettingScreen;
 
+
+    public void Start()
+    {
+        AudioManagerLobby.instance.bgmSource.Stop();
+    }
+
     public void PlayGame()
     {
         Time.timeScale = 1;
@@ -46,7 +52,7 @@ public class Lobbybtn : MonoBehaviour
         SoundSettingScreen.SetActive(true);
         MoveSettingScreen.SetActive(false);
         Time.timeScale = 0;
-        AudioManagerLobby.instance.PlayBGM("Lobby");
+     //   AudioManagerLobby.instance.PlayBGM("Lobby");
         AudioManagerLobby.instance.PlaySFX("UI");
     }
 
